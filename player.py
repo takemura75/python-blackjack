@@ -1,4 +1,5 @@
 from hand import Hand
+from pcard import Deck
 
 
 class Person:
@@ -9,7 +10,12 @@ class Person:
         self.hand = Hand()
 
     def draw(self, deck):
-        self.hand.append(deck.draw())
+        try:
+            self.hand.append(deck.draw())
+        except IndexError:
+            deck.extend(Deck())
+            deck.shuffle()
+            self.hand.append(deck.draw())
 
     def score(self):
         return self.hand.score()
