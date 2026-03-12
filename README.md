@@ -13,3 +13,10 @@
 ## Run
 
 python blackjack.py
+
+## Example
+
+Dealer: ♠10, ?
+Player: ♥8 ♣7  score=15
+
+Hit or Stay?
